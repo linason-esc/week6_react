@@ -1,13 +1,213 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  height : 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+  height : 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+header {
+  height : 50px;
+  border : 5px solid pink;
+  text-align: center;
+}
+
+.topbar{
+  font-size: 25px;
+  color : black;
+  position : relative;
+  top : 8px;
+}
+
+main {
+  margin-top: 10px;
+  display : flex;
+  flex: row;
+  flex-wrap: nowrap;
+  height : 90.5%;
+}
+
+.sidebar {
+  font-size: 25px;
+  border-radius: 5px;
+  border: 5px solid lightskyblue;
+  width : 120px;
+  flex-shrink: 0;
+}
+
+.adding-btn {
+  padding-top : 7px;
+  padding-bottom : 7px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position : relative;
+  top : 7px;
+  left : 13.5px;
+  color : black;
+  background-color: lightskyblue;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size : 15px;
+}
+
+.adding-btn:hover {
+  background-color: black;
+  color : lightskyblue;
+  cursor: pointer;
+}
+
+.marker {
+  position : relative;
+  top : 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.input {
+  position : relative;
+  top : 30px;
+  padding : 10px;
+  width : 93%;
+  margin-top : 5px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  outline: none;
+  border : 2.5px solid;
+  border-color: lightgoldenrodyellow;
+  border-radius : 5px;
+}
+
+.input:focus {
+  border-color : yellow;
+}
+
+.submitting-btn {
+  position : relative;
+  top : 30px;
+  width : 99%;
+  padding-top : 10px;
+  padding-bottom : 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: lightgoldenrodyellow;
+  color : black;
+  border-radius: 10px; 
+  font-size: 18px;
+  font-weight: bold;
+  margin-top : 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.submitting-btn:hover {
+  background-color: black;
+  color : lightgoldenrodyellow;
+}
+
+.modalBackground {
+  position: fixed;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%; /*화면 꽉 채우게!*/
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.modal {
+  display : flex;
+  flex-direction : column;
+  flex-wrap : nowrap;
+  justify-content: center;
+  position : fixed;
+  top : 50%;
+  left : 50%;
+  transform : translate(-50%, -50%); /*화면 정 가운데에 위치시키기!*/
+  width : 380px;
+  height : 380px;
+  background-color: white;
+  border-radius : 10px;
+  padding : 20px;
+  z-index: 2;
+}
+
+.closingModal {
+  position : absolute;
+  top : 0;
+  right : 0;
+  padding-top: 10px;
+  padding-bottom : 10px;
+  padding-right : 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.closingModal:hover {
+  color : plum;
+  transform: scale(1.5);
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+li {
+  padding-bottom: 7px;
+  position : relative;
+  top : 12px;
+  right : 30px;
+  color : lightskyblue;
+  margin-left: 5px;
+}
+
+.juryubox {
+  position : relative;
+  width : 92%;
+  
+  display : flex;
+  flex-direction : row;
+  flex-wrap : wrap;
+  align-content: flex-start;
+
+  border : 5px solid plum;
+  margin-left : 10px;
+  overflow-y: scroll;
+}
+
+.box {
+  display : flex;
+  flex-direction: column;
+  width : 200px;
+  height : 200px;
+  padding : 10px;
+  margin : 10px;
+  border-radius: 10px;
+  background-color: lightgoldenrodyellow;
+}
+
+.box > img {
+  width : 100%;
+  height : 160px;
+}
+
+.box > span {
+  text-align: center;
+}
+
+@media (max-width: 950px){
+  .box{
+      background-color : wheat;
+  }
+}
+
+@media (max-width: 650px){
+  .box{
+      background-color : burlywood;
+  }
 }
